@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react'
-import { useAuth } from 'contexts/AuthContext'
-import AuthModal from 'components/AuthModal'
-import Header from 'components/Header'
-import logo from 'assets/react.svg'
-import 'styles/ReactWelcome.css'
+import { useAuth } from './contexts/AuthContext'
+import AuthModal from './components/AuthModal'
+import Header from './components/Header'
+import logo from './assets/react.svg'
+import './styles/ReactWelcome.css'
 
 const App = () => {
   return (
