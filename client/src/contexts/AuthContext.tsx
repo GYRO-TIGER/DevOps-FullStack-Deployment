@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, type PropsWithChildren, useMemo } from 'react'
-import axios from 'utils/axios'
-import { type FormData, type Account } from '@types'
+import axios from '../utils/axios'
+import { type FormData, type Account } from '../@types'
 
 interface Context {
   token: string | null

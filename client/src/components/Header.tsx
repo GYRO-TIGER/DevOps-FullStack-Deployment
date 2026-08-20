@@ -1,7 +1,7 @@
 import React, { Fragment, type MouseEventHandler, useState } from 'react'
-import { useModalStore } from 'store/useModalStore'
-import { useAuth } from 'contexts/AuthContext'
-import OnlineIndicator from 'components/OnlineIndicator'
+import { useModalStore } from '../store/useModalStore'
+import { useAuth } from '../contexts/AuthContext'
+import OnlineIndicator from './OnlineIndicator'
 import { AppBar, IconButton, Avatar, Popover, List, ListSubheader, ListItemButton } from '@mui/material'
 
 interface Props {}
