@@ -15,7 +15,7 @@ pipeline {
         stage ('Checkout Source Code') {
             steps {
                 echo 'Checking out the master branch...'
-                git branch: 'master' 'https://github.com/GYRO-TIGER/DevOps-FullStack-Deployment.git'
+                git branch: 'master', url: 'https://github.com/GYRO-TIGER/DevOps-FullStack-Deployment.git'
             }
         }
 
