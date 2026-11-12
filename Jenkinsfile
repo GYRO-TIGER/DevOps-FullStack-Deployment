@@ -7,9 +7,9 @@ pipeline {
         CI=true
     }
 
-    // tools {
-
-    // }
+    tools {
+        'NodeJS'
+    }
 
     stages {
         stage ('Checkout Source Code') {
