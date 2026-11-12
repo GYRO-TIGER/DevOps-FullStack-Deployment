@@ -7,9 +7,9 @@ pipeline {
         CI=true
     }
 
-    tools {
+    // tools {
 
-    }
+    // }
 
     stages {
         stage ('Checkout Source Code') {
@@ -70,7 +70,7 @@ pipeline {
         success {
             echo 'React/TS Pipeline completed successfully!'
         }
-        failue {
+        failure {
             echo 'Pipeline failed! Please check the logs.'
         }
     }
