@@ -1,10 +1,11 @@
 pipeline {
     agent any 
+    
     environment {
-        DOCKERHUB_CREDENTIALS='dockerhub__login_credentials'
-        REPOSITORY_NAME='dhruvsharma004/devops-fullstack-deployment'
-        IMAGE_TAG="${env.BUILD_NUMBER}"
-        CI=true
+        DOCKERHUB_CREDENTIALS = 'dockerhub__login_credentials'
+        IMAGE_NAME = 'dhruvsharma004/devops-fullstack-deployment'
+        IMAGE_TAG = "${env.BUILD_NUMBER}"
+        CI = 'true'
     }
 
     tools {
@@ -22,7 +23,7 @@ pipeline {
         stage ('Build application') {
             steps {
                 echo 'Building the application from the master branch...'
-                sh 'npm ci'
+                sh 'npm install'
                 sh 'npm run build'
             }
         }
@@ -52,7 +53,7 @@ pipeline {
             steps {
                 echo 'Authenticating and pushing the image to the DockerHub...'
                 script {
-                    docker.withRegistry("https://index.docker.io/v1/", DOCKERHUB_CREDENTIALS) {
+                    docker.withRegistry('https://index.docker.io/v1/', DOCKERHUB_CREDENTIALS) {
                         dockerImage.push()
                         dockerImage.push('latest')
                     }
