@@ -3,7 +3,7 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS='dockerhub__login_credentials'
         REPOSITORY_NAME='dhruvsharma004/devops-fullstack-deployment'
-        IMAGE_TAG='${env.BUILD_NUMBER}'
+        IMAGE_TAG="${env.BUILD_NUMBER}"
         CI=true
     }
 
@@ -43,7 +43,7 @@ pipeline {
             steps {
                 echo 'Building the Docker image...'
                 script {
-                    dockerImage = docker.build('${IMAGE_NAME}:${IMAGE_TAG}')
+                    dockerImage = docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
                 }
             }
         }
@@ -52,7 +52,7 @@ pipeline {
             steps {
                 echo 'Authenticating and pushing the image to the DockerHub...'
                 script {
-                    docker.withRegistry("https://hub.docker.com/repository/docker/dhruvsharma004/devops-fullstack-deployment/general", DOCKERHUB_CREDENTIALS) {
+                    docker.withRegistry("https://index.docker.io/v1/", DOCKERHUB_CREDENTIALS) {
                         dockerImage.push()
                         dockerImage.push('latest')
                     }
