@@ -20,13 +20,13 @@ pipeline {
             }
         }
 
-        stage ('Build application') {
-            steps {
-                echo 'Building the application from the master branch...'
-                sh 'npm install'
-                sh 'npm run build'
-            }
-        }
+        // stage ('Build application') {
+        //     steps {
+        //         echo 'Building the application from the master branch...'
+        //         sh 'npm install'
+        //         sh 'npm run build'
+        //     }
+        // }
 
         stage ('Run Tests') {
             steps {
