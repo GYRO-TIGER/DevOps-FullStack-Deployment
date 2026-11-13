@@ -31,7 +31,9 @@ pipeline {
         stage ('Run Tests') {
             steps {
                 echo 'Running tests on the source code...'
-                sh 'npm test'
+                dir ('client') {
+                    sh 'npm test'
+                }
             }
             post {
                 always {
